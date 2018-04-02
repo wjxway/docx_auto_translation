@@ -10,6 +10,16 @@ A sample .docx file: `test.docx` is in the folder and the corresponding output i
 
 
 
+For other languages, write:
+
+```mathematica
+TranslateAll[fromfile,tofile,GoogleTranslate,"TranslateFrom"->"**","TranslateTo"->"**"]
+```
+
+The default setting is from **English** to **Chinese**.
+
+
+
 ####Screenshot as follows:
 
 #####**Original `test.docx`**
@@ -31,3 +41,19 @@ A sample .docx file: `test.docx` is in the folder and the corresponding output i
 **This program requires *Mathematica* Version 11.0+ and `WebTools` package re-written by me......**
 
 **If you failed to use this piece of code, it's probably because of an improperly installed `WebTools` Package**
+
+**Using Google Translate extensively without paying is actually not that good... So please do not use it tooooo heavily...**
+
+**This is only for study use! No commercial use allowed!!!**
+
+
+
+#### Further Dev
+
+1. `GoogleTranslate` is a convenient function to use~
+
+2. *Translate* is used in the broad sense here, essentially all forms of operation to a sentence could be called as *Translate*. In fact, all translate work is done by function `GoogleTranslate` as a parameter of function `TranslateAll`, so if one substitute this with other functions such like `Function[{string},somecode]&`, it would work as well. A simple "repeat the content three times" program could be:
+
+   ```mathematica
+   TranslateAll[fromfile,tofile,StringJoin[ConstantArray[#,2]]&]
+   ```
