@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     34192,        865]
-NotebookOptionsPosition[     29788,        774]
-NotebookOutlinePosition[     30131,        789]
-CellTagsIndexPosition[     30088,        786]
+NotebookDataLength[     34480,        866]
+NotebookOptionsPosition[     30331,        781]
+NotebookOutlinePosition[     30674,        796]
+CellTagsIndexPosition[     30631,        793]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -711,27 +711,49 @@ Cell[BoxData[
              RowBox[{"{", "\"\<*\>\"", "}"}]}]}], "}"}]}], "}"}], ",", 
         RowBox[{
         "\"\<WindowTitle\>\"", "\[Rule]", 
-         "\"\<Browse Target .docx File\>\""}]}], "]"}]}], ",", 
-     RowBox[{"outfile", "=", 
-      RowBox[{"SystemDialogInput", "[", 
-       RowBox[{"\"\<FileSave\>\"", ",", 
-        RowBox[{"NotebookDirectory", "[", "]"}], ",", 
-        RowBox[{
-        "\"\<WindowTitle\>\"", "\[Rule]", 
-         "\"\<Save Created .docx File\>\""}]}], "]"}]}]}], "}"}], ",", 
-   RowBox[{"If", "[", 
-    RowBox[{
+         "\"\<Browse Target .docx File\>\""}]}], "]"}]}], ",", "outfile"}], 
+    "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"outfile", "=", 
+     RowBox[{"SystemDialogInput", "[", 
+      RowBox[{"\"\<FileSave\>\"", ",", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"infile", ",", 
+         RowBox[{
+          RowBox[{"StartOfString", "~~", 
+           RowBox[{"Longest", "[", "dir___", "]"}], "~~", "\"\<\\\\\>\"", "~~", 
+           RowBox[{"Shortest", "[", "file___", "]"}], "~~", "EndOfString"}], 
+          "\[RuleDelayed]", 
+          RowBox[{"dir", "<>", "\"\<\\\\\>\"", "<>", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"StringFreeQ", "[", 
+              RowBox[{"file", ",", "\"\<.\>\""}], "]"}], ",", 
+             RowBox[{"file", "<>", "\"\<_out.docx\>\""}], ",", 
+             RowBox[{"StringReplace", "[", 
+              RowBox[{"file", ",", 
+               RowBox[{
+                RowBox[{"StartOfString", "~~", 
+                 RowBox[{"Longest", "[", "pre___", "]"}], "~~", "\"\<.\>\"", "~~", 
+                 RowBox[{"Shortest", "[", "ap___", "]"}], "~~", 
+                 "EndOfString"}], "\[RuleDelayed]", 
+                RowBox[{"pre", "<>", "\"\<_out.\>\"", "<>", "ap"}]}]}], 
+              "]"}]}], "]"}]}]}]}], "]"}], ",", 
+       RowBox[{
+       "\"\<WindowTitle\>\"", "\[Rule]", 
+        "\"\<Save Created .docx File\>\""}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
      RowBox[{
-      RowBox[{"infile", "=!=", "$Canceled"}], "&&", 
-      RowBox[{"outfile", "=!=", "$Canceled"}]}], ",", 
-     RowBox[{"TranslateAll", "[", 
-      RowBox[{"infile", ",", "outfile"}], "]"}]}], "]"}]}], "]"}]], "Input",
+      RowBox[{
+       RowBox[{"infile", "=!=", "$Canceled"}], "&&", 
+       RowBox[{"outfile", "=!=", "$Canceled"}]}], ",", 
+      RowBox[{"TranslateAll", "[", 
+       RowBox[{"infile", ",", "outfile"}], "]"}]}], "]"}]}]}], "]"}]], "Input",
  CellChangeTimes->{{3.73166985759814*^9, 3.731669895626983*^9}, {
-   3.7316701383272476`*^9, 3.7316701401536846`*^9}, 
-   3.7316753957156105`*^9},ExpressionUUID->"1f225b57-437a-42d3-b8c4-\
-a7ee943a08b8"],
-
-Cell[CellGroupData[{
+   3.7316701383272476`*^9, 3.7316701401536846`*^9}, 3.7316753957156105`*^9, {
+   3.7317952659875917`*^9, 3.731795295371348*^9}, 3.731795739093489*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"1f225b57-437a-42d3-b8c4-a7ee943a08b8"],
 
 Cell[BoxData[
  RowBox[{"TranslateAll", "[", 
@@ -744,15 +766,6 @@ Cell[BoxData[
  CellChangeTimes->{{3.731711899798213*^9, 3.7317119038754168`*^9}},
  CellLabel->"In[57]:=",ExpressionUUID->"94908b42-acc8-41ba-8b20-fb55f6b3237d"],
 
-Cell[BoxData["\<\"C:\\\\Users\\\\wjxwa\\\\OneDrive\\\\Mathematica \
-2018\\\\translate docx new\\\\test_out.docx\"\>"], "Output",
- CellChangeTimes->{3.7317119297486315`*^9, 3.731712209135474*^9, 
-  3.7317122496060925`*^9, 3.7317124212511387`*^9},
- CellLabel->"Out[57]=",ExpressionUUID->"24c43ace-a8e6-4fdd-a088-eefbe9d84ba9"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"TranslateAll", "[", 
   RowBox[{
@@ -763,13 +776,7 @@ Cell[BoxData[
     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
     "\"\<froggy_out.docx\>\""}]}], "]"}]], "Input",
  CellChangeTimes->{{3.7317540754335637`*^9, 3.7317540845296574`*^9}},
- CellLabel->"In[22]:=",ExpressionUUID->"418c3da3-7b7e-42d9-b982-7f068b5fe41f"],
-
-Cell[BoxData["\<\"C:\\\\Users\\\\wjxwa\\\\OneDrive\\\\Mathematica \
-2018\\\\translate docx new\\\\froggy_out.docx\"\>"], "Output",
- CellChangeTimes->{3.731754112420665*^9},
- CellLabel->"Out[22]=",ExpressionUUID->"60d6855e-78b7-4da6-889f-9110efdcca53"]
-}, Open  ]]
+ CellLabel->"In[22]:=",ExpressionUUID->"418c3da3-7b7e-42d9-b982-7f068b5fe41f"]
 }, Open  ]]
 },
 WindowSize->{1280, 677},
@@ -857,15 +864,9 @@ Cell[CellGroupData[{
 Cell[25466, 657, 218, 4, 48, "Subchapter",ExpressionUUID->"5693d57b-b4b3-4c32-be21-952751dd4382"],
 Cell[25687, 663, 763, 19, 100, "Text",ExpressionUUID->"56971dad-fe9a-47a2-9369-35b9b6c0e617"],
 Cell[26453, 684, 370, 8, 34, "Text",ExpressionUUID->"11f47968-1c1e-492c-921c-cf7e2dbfaee9"],
-Cell[26826, 694, 1465, 37, 67, "Input",ExpressionUUID->"1f225b57-437a-42d3-b8c4-a7ee943a08b8"],
-Cell[CellGroupData[{
-Cell[28316, 735, 408, 9, 28, "Input",ExpressionUUID->"94908b42-acc8-41ba-8b20-fb55f6b3237d"],
-Cell[28727, 746, 324, 4, 32, "Output",ExpressionUUID->"24c43ace-a8e6-4fdd-a088-eefbe9d84ba9"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[29088, 755, 418, 10, 28, "Input",ExpressionUUID->"418c3da3-7b7e-42d9-b982-7f068b5fe41f"],
-Cell[29509, 767, 251, 3, 88, "Output",ExpressionUUID->"60d6855e-78b7-4da6-889f-9110efdcca53"]
-}, Open  ]]
+Cell[26826, 694, 2657, 61, 181, "Input",ExpressionUUID->"1f225b57-437a-42d3-b8c4-a7ee943a08b8"],
+Cell[29486, 757, 408, 9, 28, "Input",ExpressionUUID->"94908b42-acc8-41ba-8b20-fb55f6b3237d"],
+Cell[29897, 768, 418, 10, 28, "Input",ExpressionUUID->"418c3da3-7b7e-42d9-b982-7f068b5fe41f"]
 }, Open  ]]
 }
 ]

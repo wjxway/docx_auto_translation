@@ -48,7 +48,7 @@ The default setting is from **English** to **Chinese**.
 
 
 
-#### Further Dev
+#### For Further Devs
 
 1. `GoogleTranslate` is a convenient function to use~
 
@@ -57,3 +57,5 @@ The default setting is from **English** to **Chinese**.
    ```mathematica
    TranslateAll[fromfile,tofile,StringJoin[ConstantArray[#,2]]&]
    ```
+
+3. Further development include saving progress once in a while instead of dumping it altogether when the whole translation process ends. Now any interruption would cause the program to fail... Though I've used it to translate documents hundreds of pages long without a failure... This could be greatly improved, and it's not hard. But I'm to lazy to do it... (But note that this process is not as easy as one might think, a tiny validity check of some sort must be added before exporting to ensure that exported document is valid, not falsely created.)
