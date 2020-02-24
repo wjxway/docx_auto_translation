@@ -1,6 +1,6 @@
 # Docx File Auto Translation
 
-####Basics
+## Basics
 
 This *Mathematica* program use Google Translate to translate text.
 
@@ -20,15 +20,15 @@ The default setting is from **English** to **Chinese**.
 
 
 
-####Screenshot as follows:
+## Screenshot as follows:
 
-#####**Original `test.docx`**
+### **Original `test.docx`**
 
 ![Original_1](https://i.loli.net/2018/04/03/5ac25e3fa7487.png)
 
 ![Original_2](https://i.loli.net/2018/04/03/5ac25e3fbea25.png)
 
-#####**Translated `test_out.docx`**
+### **Translated `test_out.docx`**
 
 ![Translated_1](https://i.loli.net/2018/04/03/5ac25e3fc0836.png)
 
@@ -36,7 +36,7 @@ The default setting is from **English** to **Chinese**.
 
 
 
-#### Disclaimer
+## Disclaimer
 
 **This program requires *Mathematica* Version 11.0+ and `WebTools` package re-written by me......**
 
@@ -48,7 +48,7 @@ The default setting is from **English** to **Chinese**.
 
 
 
-#### For Further Devs
+## For Further Devs
 
 1. `GoogleTranslate` is a convenient function to use~
 
